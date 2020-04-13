@@ -39,3 +39,18 @@ def notes_detail(request, pk):
     elif request.method == 'DELETE':
         note.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+'''
+to access the data in the SQL-DataBase rawly via python/pandas:
+
+datapath = "../simple_django_react_app/db.sqlite3"
+
+import sqlite3
+import pandas as pd
+# Create your connection.
+cnx = sqlite3.connect(datapath)
+
+pd.read_sql_query("SELECT * FROM sqlite_master", cnx)["name"]
+pd.read_sql_query("SELECT * FROM simple_app_note",cnx)
+'''

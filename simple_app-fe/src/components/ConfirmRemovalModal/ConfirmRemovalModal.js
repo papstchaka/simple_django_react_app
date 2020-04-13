@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from "react";
-import { Modal, ModalHeader, Button, ModalFooter } from "reactstrap";
+import { Modal, ModalHeader, ModalFooter } from "reactstrap";
 
 import axios from "axios";
 
-import { API_URL } from "../constants";
+import { API_URL } from "../../constants";
 
 class ConfirmRemovalModal extends Component {
   state = {
@@ -26,25 +26,26 @@ class ConfirmRemovalModal extends Component {
   render() {
     return (
       <Fragment>
-        <Button color="danger" onClick={() => this.toggle()}>
+        <a rel="noopener noreferrer" className="cta-btn cta-btn--resume" onClick={() => this.toggle()}>
           Remove
-        </Button>
-        <Modal isOpen={this.state.modal} toggle={this.toggle}>
+        </a>
+        <Modal className="modal_" isOpen={this.state.modal} toggle={this.toggle}>
           <ModalHeader toggle={this.toggle}>
-            Do you really wanna delete this note?
+            <h1 className="modal_">Do you really wanna delete this note?</h1>
           </ModalHeader>
 
           <ModalFooter>
-            <Button type="button" onClick={() => this.toggle()}>
+            <a rel="noopener noreferrer" className="cta-btn cta-btn--hero" type="button" onClick={() => this.toggle()}>
               Cancel
-            </Button>
-            <Button
+            </a>
+            <a
+              rel="noopener noreferrer"
+              className="cta-btn cta-btn--hero"
               type="button"
-              color="primary"
               onClick={() => this.deleteNote(this.props.pk)}
             >
               Yes
-            </Button>
+            </a>
           </ModalFooter>
         </Modal>
       </Fragment>

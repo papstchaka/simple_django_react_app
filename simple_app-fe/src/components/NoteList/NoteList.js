@@ -1,19 +1,29 @@
 import React, { Component } from "react";
 import { Table } from "reactstrap";
-import NewNoteModal from "./NewNoteModal";
+import NewNoteModal from "../NewNoteModal/NewNoteModal";
 
-import ConfirmRemovalModal from "./ConfirmRemovalModal";
+import ConfirmRemovalModal from "../ConfirmRemovalModal/ConfirmRemovalModal";
 
 class NoteList extends Component {
+  state= {
+    active: false
+  }
+
+  itemCheckHandler = () => {
+    this.setState({
+      active: !this.state.active
+    })
+  };
+
   render() {
     const notes = this.props.notes;
     return (
-      <Table dark>
+      <Table className="table" striped bordered responsive>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Day of Deadline</th>
-            <th>Registration</th>
+            <th className="table-content">Name</th>
+            <th className="table-content">Day of Deadline</th>
+            <th className="table-content">Registration</th>
             <th></th>
           </tr>
         </thead>
@@ -26,10 +36,10 @@ class NoteList extends Component {
             </tr>
           ) : (
             notes.map(notes => (
-              <tr key={notes.pk}>
-                <td>{notes.name}</td>
-                <td>{notes.deadlineDate}</td>
-                <td>{notes.registrationDate}</td>
+              <tr key={notes.pk} style={{textDecoration: this.state.active ? 'none' : 'none'}} onClick={this.itemCheckHandler}>
+                <td className="table-content">{notes.name}</td>
+                <td className="table-content">{notes.deadlineDate}</td>
+                <td className="table-content">{notes.registrationDate}</td>
                 <td align="center">
                   <NewNoteModal
                     create={false}

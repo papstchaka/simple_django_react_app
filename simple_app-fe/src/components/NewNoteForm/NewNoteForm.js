@@ -1,9 +1,9 @@
 import React from "react";
-import { Button, Form, FormGroup, Input, Label } from "reactstrap";
+import { Form, FormGroup, Input, Label } from "reactstrap";
 
 import axios from "axios";
 
-import { API_URL } from "../constants";
+import { API_URL } from "../../constants";
 
 class NewNoteForm extends React.Component {
   state = {
@@ -46,25 +46,27 @@ class NewNoteForm extends React.Component {
   render() {
     return (
       <Form onSubmit={this.props.note ? this.editNote : this.createNote}>
-        <FormGroup>
-          <Label for="name">Name:</Label>
+        <FormGroup className="modal_" >
+          <Label className="modal_" for="name">Name:</Label>
           <Input
+            className="modal_"
             type="text"
             name="name"
             onChange={this.onChange}
             value={this.defaultIfEmpty(this.state.name)}
           />
         </FormGroup>
-        <FormGroup>
-          <Label for="deadlineDate">Day of Deadline:</Label>
+        <FormGroup className="modal_">
+          <Label className="modal_" for="deadlineDate">Day of Deadline:</Label>
           <Input
+            className="modal_"
             type="date"
             name="deadlineDate"
             onChange={this.onChange}
             value={this.defaultIfEmpty(this.state.deadlineDate)}
           />
         </FormGroup>
-        <Button>Send</Button>
+          <a rel="noopener noreferrer" onClick={this.props.note ? this.editNote : this.createNote} className="cta-btn cta-btn--hero">Send</a>
       </Form>
     );
   }
