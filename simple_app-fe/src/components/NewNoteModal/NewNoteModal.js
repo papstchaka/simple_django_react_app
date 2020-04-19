@@ -42,7 +42,7 @@ class NewNoteModal extends Component {
             <NewNoteForm
               resetState={this.props.resetState}
               toggle={this.toggle}
-              note={this.props.note}
+              note={this.props.notes}
             />
           </ModalBody>
         </Modal>
