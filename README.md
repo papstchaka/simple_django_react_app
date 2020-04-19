@@ -19,6 +19,7 @@ A simple implementation of Django REST as backend with an React App as correspon
 * start the frontend due to `npm start` in the `simple_app-fe`-folder and head to `localhost:3000` to see the frontend
 * OPTIONAL: If you want to see which data is stored in the backend (on the server), head to `localhost:<desired-port>/api/simple_app`
 * OPTIONAL: Desired style of website can be easily changed by changing the colors in `simple_app-fe/src/style/_variables.scss`
+* Project has the same frontend and functionality as <a href="https://github.com/papstchaka/simple_flask_react_app" target="_blank">simple_flask_react_app</a>
 
 <h2 align="center">
   <img src=https://github.com/papstchaka/simple_django_react_app/blob/master/simple_app-fe/src/assets/backend_view.jpg alt="Backend View" width="800px" />
