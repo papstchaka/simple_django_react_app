@@ -9,7 +9,7 @@ A simple implementation of Django REST as backend with an React App as correspon
 * django
 * djangorestframework
 * django-cors-headers
---> install via `pip install django djangorestframework django-cors-headers`
+> install via `pip install django djangorestframework django-cors-headers`
 
 * npm to have the frontend working
 
