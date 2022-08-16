@@ -15,7 +15,8 @@
     "react-bootstrap": "latest",
     "react-dom": "latest",
     "react-scripts": "latest",
-    "reactstrap": "latest"
+    "reactstrap": "latest",
+    "scss-tokenizer": "^0.4.3"
   },
   "scripts": {
     "start": "react-scripts start",
