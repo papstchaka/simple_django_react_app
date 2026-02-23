@@ -1,0 +1,10 @@
+# Specify location of manifest files for each package manager
+
+version: 2
+updates:
+
+  - package-ecosystem: "npm"
+    # Files stored in `simple_app-fe` directory
+    directory: "/simple_app-fe"
+    schedule:
+      interval: "weekly"
